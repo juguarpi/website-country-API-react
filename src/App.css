@@ -1,38 +1,241 @@
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+  min-width: 37.5rem;
+  max-width: 100rem;
   min-height: 100vh;
+  margin: 0 auto;
+  box-shadow: 0rem 0.5rem 3rem -2.5rem var(--shadow-color);
+
+  font-size: 1.4rem;
+
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+.header {
+  padding: 2rem 2rem;
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
+  background-color: var(--element-bg-color);
+  box-shadow: 0rem 0.5rem 3rem -2.5rem var(--shadow-color);
+}
+
+.heading-1 {
+  font-size: 1.4rem;
+  font-weight: 800;
+}
+
+.btn-dark-mode {
+  border: none;
+  background-color: inherit;
+  color: var(--text-color);
+}
+
+.btn-dark-mode:hover {
+  transform: translateY(-0.2rem);
+}
+
+.container-all,
+.container-detail {
+  padding: 1rem 1rem;
+}
+
+.container-searh-bar {
+  padding: 1rem;
+}
+
+@media only screen and (min-width: 600px) {
+  .container-searh-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.search-bar {
+  min-width: 25rem;
+  max-width: 60rem;
+  flex: 1;
+  display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  background-color: var(--element-bg-color);
+  padding: 1.2rem 2rem;
+  border-radius: 0.5rem;
+  box-shadow: 0rem 1rem 3rem -2rem var(--shadow-color);
+  margin-right: 2rem;
+  margin-bottom: 1rem;
 }
 
-.App-link {
-  color: #61dafb;
+.search-input {
+  border: none;
+  margin-left: 1rem;
+  color: var(--text-color);
+  background-color: var(--element-bg-color);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.search-input::placeholder {
+  color: var(--search-text-color);
+}
+
+.search-input:focus {
+  outline: none;
+  /* transform: scaleX(1.5); */
+}
+
+.filter-bar {
+  width: 20rem;
+  background-color: var(--element-bg-color);
+  position: relative;
+  border-radius: 0.5rem;
+  box-shadow: 0rem 1rem 3rem -2rem var(--shadow-color);
+  margin-bottom: 1rem;
+}
+
+.filter-bar-innerbox {
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.filter-bar-innerbox:hover {
+  color: var(--search-text-color);
+}
+
+.region-list {
+  position: absolute;
+  box-sizing: border-box;
+  left: 0rem;
+  top: 2.5rem;
+  padding: 0rem;
+  width: 100%;
+  height: 0rem;
+  overflow: hidden;
+  /* ????????????????????????????????/ to update here */
+  opacity: 0;
+  background-color: var(--element-bg-color);
+  transform: translateY(0.5rem);
+  transition: all 0.2s ease-in-out;
+}
+
+.region-list--shown {
+  height: auto;
+  opacity: 1;
+}
+
+.region {
+  padding: 0.6rem 1.2rem;
+}
+
+.region:hover {
+  color: var(--search-text-color);
+}
+
+.container-countries {
+  padding: 2rem 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.country-intro-card {
+  width: 28rem;
+  margin: 2rem auto 4rem auto;
+  background-color: var(--element-bg-color);
+  border-radius: 0.5rem;
+  box-shadow: 0rem 1rem 3rem -2rem var(--shadow-color);
+}
+
+.flagAtAllPage {
+  width: 28rem;
+  height: 22rem;
+  border-radius: 0.5rem;
+}
+
+.country-intro-info {
+  padding: 1rem 1rem 3.5rem 2rem;
+}
+
+.heading-2 {
+  font-size: 1.6rem;
+  padding: 1rem 0;
+}
+
+.country-intro-info p {
+  font-weight: 600;
+}
+
+.text-1 {
+  font-weight: 300;
+}
+
+.btn-back {
+  margin-top: 1rem;
+  margin-left: 2rem;
+  width: 6rem;
+
+  background-color: var(--element-bg-color);
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+
+.btn-back:hover {
+  color: var(--search-text-color);
+  transform: translateY(-0.2rem);
+}
+
+.country-detail-card {
+  width: 32rem;
+  margin: 2rem auto 0 auto;
+}
+
+@media only screen and (min-width: 800px) {
+  .country-detail-card {
+    width: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
   }
-  to {
-    transform: rotate(360deg);
+}
+
+.flagAtDetailPage {
+  width: 100%;
+  border-radius: 0.5rem;
+  align-self: center;
+}
+
+@media only screen and (min-width: 800px) {
+  .flagAtDetailPage {
+    width: 80%;
+    justify-self: center;
   }
+}
+
+.country-detail-info {
+  padding: 1rem;
+}
+
+.detail-information-section-2 {
+  margin-top: 2rem;
+  margin-bottom: 4rem;
+}
+
+.detail-information p {
+  font-weight: 600;
+}
+
+.border-countries {
+  margin-top: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.border-country {
+  background-color: var(--element-bg-color);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  margin-right: 1rem;
+  margin-top: 0.5rem;
+  box-shadow: 0rem 1rem 3rem -2rem var(--shadow-color);
+}
+
+.border-country:hover {
+  color: var(--search-text-color);
+  transform: translateY(-0.2rem);
 }
